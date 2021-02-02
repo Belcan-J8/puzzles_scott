@@ -1,7 +1,7 @@
 #print out the compiler version number | mostly for automated build systems to see if the compiler changed when something went wrong
 x86_64-w64-mingw32-g++ --version
 
-#remove old build
+#remove old build - should really add options to not always do a clean build in a full project or better use cmake or another nice build system
 rm -r build_final
 rm -r build_intermediates
 
@@ -23,7 +23,7 @@ CPLUS_INCLUDE_PATH=OLD_CPLUS_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH
 
 
-
+#Link and assemble the final binary
 OLD_LIBRARY_PATH=$LIBRARY_PATH
 LIBRARY_PATH=$LIBRARY_PATH:$PWD/build_intermediates
 x86_64-w64-mingw32-g++ -Wpedantic -std=c++17 -o build_final/puzzle_car.exe build_intermediates/*
