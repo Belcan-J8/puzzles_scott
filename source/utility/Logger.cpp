@@ -1,21 +1,19 @@
 #include "Logger.h"
 
+#include "../lib/termcolor.hpp"
 #include <iostream>
-#include <termcolor/termcolor.hpp>
 
 void Logger::Log(std::string string)
 {
-    std::cout << termcolor::reset << string << std::endl;
+	std::cout << string << std::endl;
 }
-void Logger::LogRed(std::string string)
+void BlueLogger::Log(std::string string)
 {
-    std::cout << termcolor::red << string << std::endl;
+	std::cout << termcolor::blue << string;
+	std::cout << termcolor::reset << "" << std::endl;
 }
-void Logger::LogGreen(std::string string)
+void RedLogger::Log(std::string string)
 {
-    std::cout << termcolor::green << string << std::endl;
-}
-void Logger::LogBlue(std::string string)
-{
-    std::cout << termcolor::blue << string << std::endl;
+	std::cout << termcolor::red << string;
+	std::cout << termcolor::reset << "" << std::endl;
 }

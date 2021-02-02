@@ -4,22 +4,24 @@
 
 struct ILogger
 {
-    virtual void Log(std::string string) = 0;
+	virtual void Log(std::string string) = 0;
 };
 
-class IColorLogger : public ILogger
+class Logger : public ILogger
 {
 public:
-    virtual void LogRed(std::string string) = 0;
-    virtual void LogGreen(std::string string) = 0;
-    virtual void LogBlue(std::string string) = 0;
+	void Log(std::string string);
 };
 
-class Logger : public IColorLogger
+class BlueLogger : public ILogger
 {
 public:
-    void Log(std::string string);
-    void LogRed(std::string string);
-    void LogGreen(std::string string);
-    void LogBlue(std::string string);
+	void Log(std::string string);
 };
+
+class RedLogger : public ILogger
+{
+public:
+	void Log(std::string string);
+};
+

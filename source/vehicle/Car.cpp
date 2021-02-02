@@ -1,22 +1,22 @@
 #include "Car.h"
 
 Car::Car()
-    : logger(new Logger())
+	: logger(new BlueLogger())
 {
 }
 void Car::TurnLeft()
 {
-    logger->LogBlue("Turning left");
-    fuelGauge.DecrementFuelLevel();
+	logger->Log("Turning left");
+	fuelGauge.DecrementFuelLevel();
 }
 void Car::TurnRight()
 {
-    logger->LogBlue("Turning right");
-    fuelGauge.DecrementFuelLevel();
+	logger->Log("Turning right");
+	fuelGauge.DecrementFuelLevel();
 }
 void Car::Accelerate()
 {
-    logger->LogBlue("Moving ahead");
-    fuelGauge.DecrementFuelLevel();
-    fuelGauge.DecrementFuelLevel();
+	logger->Log("Moving ahead");
+	fuelGauge.DecrementFuelLevel();
+	fuelGauge.DecrementFuelLevel();
 }
