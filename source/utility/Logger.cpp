@@ -6,15 +6,20 @@
 
 void Logger::Log(std::string string)
 {
-	std::cout << string << std::endl;
+	std::cout << termcolor::reset << string << std::endl;
 }
-void BlueLogger::Log(std::string string)
+void CyanLogger::Log(std::string string)
 {
-	std::cout << termcolor::blue << string;
+	std::cout << termcolor::cyan << string;
 	std::cout << termcolor::reset << "" << std::endl;
 }
-void RedLogger::Log(std::string string)
+void MagentaLogger::Log(std::string string)
 {
-	std::cout << termcolor::red << string;
+	std::cout << termcolor::magenta << string;
+	std::cout << termcolor::reset << "" << std::endl;
+}
+void YellowLogger::Log(std::string string)
+{
+	std::cout << termcolor::yellow << string;
 	std::cout << termcolor::reset << "" << std::endl;
 }
