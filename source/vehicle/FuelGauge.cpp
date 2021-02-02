@@ -2,7 +2,7 @@
 
 FuelGauge::FuelGauge()
 	: fuelLevel(5)
-	, logger(new RedLogger())
+	, logger(new YellowLogger())
 {
 }
 
