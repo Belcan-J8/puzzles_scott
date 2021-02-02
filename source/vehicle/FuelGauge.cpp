@@ -2,9 +2,10 @@
 
 FuelGauge::FuelGauge()
 	: fuelLevel(5)
-	, logger(new Logger())
+	, logger(new YellowLogger())
 {
 }
+
 void FuelGauge::DecrementFuelLevel()
 {
 	--fuelLevel;

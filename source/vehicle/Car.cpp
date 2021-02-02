@@ -1,8 +1,8 @@
 #include "Car.h"
 
-Car::Car()
-	: logger(new Logger())
+Car::Car(ILogger * logger)
 {
+    this->logger = logger;
 }
 void Car::TurnLeft()
 {
