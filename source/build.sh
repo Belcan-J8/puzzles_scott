@@ -1,3 +1,10 @@
+
+# add a little bit of intelligence to run the setup if it has not already been done
+if [ ! -d "external_dependencies" ]
+then
+    ./setup.sh
+fi
+
 #print out the compiler version number | mostly for automated build systems to see if the compiler changed when something went wrong
 x86_64-w64-mingw32-g++ --version
 
@@ -11,7 +18,10 @@ mkdir -p build_intermediates
 
 #compile the static libraries
 OLD_CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH
-CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$PWD/utility:$PWD/vehicle
+
+CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$PWD/utility
+CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$PWD/vehicle
+CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$PWD/external_dependencies/termcolor/include
 export CPLUS_INCLUDE_PATH
 
 x86_64-w64-mingw32-g++ -Wpedantic -std=c++17 -o build_intermediates/Logger.a -c utility/Logger.cpp
