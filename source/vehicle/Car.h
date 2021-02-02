@@ -6,11 +6,11 @@
 class Car
 {
 public:
-	Car();
-	void TurnLeft();
-	void TurnRight();
-	void Accelerate();
+    Car();
+    void TurnLeft();
+    void TurnRight();
+    void Accelerate();
 private:
-	FuelGauge fuelGauge;
-	ILogger* logger;
+    FuelGauge fuelGauge;
+    IColorLogger* logger;
 };
