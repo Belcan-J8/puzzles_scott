@@ -7,10 +7,15 @@ int main(int argc, char* argv[])
 
 	logger.Log("Starting application");
 
-	Car car;
-	car.TurnLeft();
-	car.TurnRight();
-	car.Accelerate();
+	Car car_one(new CyanLogger());
+	Car car_two(new MagentaLogger());
+
+	car_one.TurnLeft();
+	car_two.TurnLeft();
+	car_two.TurnRight();
+	car_one.TurnRight();
+	car_one.Accelerate();
+	car_two.Accelerate();
 
 	logger.Log("Exiting application");
 }
