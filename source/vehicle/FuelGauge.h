@@ -9,5 +9,5 @@ public:
 	void DecrementFuelLevel();
 private:
 	int fuelLevel;
-	IColorLogger* logger;
+	ILogger* logger;
 };

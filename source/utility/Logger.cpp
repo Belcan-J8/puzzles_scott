@@ -1,7 +1,8 @@
 #include "Logger.h"
 
-#include "../lib/termcolor.hpp"
 #include <iostream>
+
+#include <termcolor/termcolor.hpp>
 
 void Logger::Log(std::string string)
 {
